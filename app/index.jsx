@@ -1,6 +1,10 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-require('./scss/application.scss');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './scss/application.scss';
+
+import TopPanel from './components/TopPanel.jsx'
+
+
 
 
 class Td extends React.Component{
@@ -37,10 +41,11 @@ class Td extends React.Component{
 		}
 	}
 
-
 	render() {
 		return (
-		<td className={this.state.status}></td>
+			<td 
+				className={this.state.status}
+				onClick={function() {this.props.add(this.props.row, this.props.col)}.bind(this)}></td>
 		)
 	}	
 }
@@ -57,7 +62,8 @@ class Tr extends React.Component{
 				<Td key={col} 
 					col={col} 
 					row={this.props.row} 
-					board={this.props.board} />
+					board={this.props.board} 
+					add={this.props.add}/>
 			)
 		}.bind(this))
 
@@ -79,7 +85,8 @@ class Table extends React.Component{
 			return (
 				<Tr key={row} 
 					row={row} 
-					board={this.props.board} />
+					board={this.props.board} 
+					add={this.props.add}/>
 			)
 		}.bind(this))
 
@@ -100,22 +107,29 @@ class App extends React.Component{
 		super(props);
 		this.state = {
 			board: [],
-			interval: null
+			interval: null,
+			counter: 0
 		}
 	}
 
 	componentWillMount() {
+		this.createBoard(.7);
+	}
+
+	createBoard(initial) {
 		let board = [];
 		for(var i = 0; i < this.props.height; i++) {
 			let row = [];
 			for(var j = 0; j < this.props.width; j++) {
-				let square = Math.random() >= .7;
+				let square = Math.random() >= initial;
+
 				row.push(square);
 			}
 			board.push(row);
 		}
 		this.setState({
-			board: board
+			board: board,
+			counter: 0
 		});
 	}
 
@@ -138,7 +152,8 @@ class App extends React.Component{
 			board.push(row);
 		}
 		this.setState({
-			board: board
+			board: board,
+			counter: this.state.counter + 1
 		})
 	}
 
@@ -152,13 +167,17 @@ class App extends React.Component{
 		}
 	}
 
+	clear() {
+		this.createBoard(1);
+	}
+
 	getNeighbors(row, col) {
 		let neighbors = 0;
 		let width = this.props.width;
 		let height = this.props.height;
 		for(var k = (row - 1); k < (row + 2); k++) {
 			for(var l = (col - 1); l < (col + 2); l++) {
-				if(k >= 0 && k < width && l >= 0 && l < width) {
+				if(k >= 0 && k < height && l >= 0 && l < width) {
 					if(this.state.board[k][l] && !(k === row && l === col)) {
 						neighbors++;
 					}	
@@ -168,20 +187,32 @@ class App extends React.Component{
 		return neighbors;
 	}
 
+	addSquare(row, col) {
+		this.state.board[row][col] ? this.state.board[row][col] = false : this.state.board[row][col] = true;
+		this.setState({
+			board: this.state.board
+		})
+	}
+
+
 	render() {
 		return (
 			<div className="main">
-				<div className="header">React Table</div>
+				<TopPanel 
+					onStart={this.start.bind(this)}
+					onStop={this.stop.bind(this)}
+					onClear={this.clear.bind(this)}
+					counter={this.state.counter}/>
+				
 				<Table 	
-					board={this.state.board} />
-				<button onClick={this.start.bind(this)}>Start</button>
-				<button onClick={this.stop.bind(this)}>Stop</button>
+					board={this.state.board} 
+					add={this.addSquare.bind(this)}/>
 			</div>
 		)
 	}
 }
 
 
-ReactDOM.render(<App width={50} height={50}>Hello World</App>, document.getElementById('app'))
+ReactDOM.render(<App width={60} height={40}>Hello World</App>, document.getElementById('app'))
 
 

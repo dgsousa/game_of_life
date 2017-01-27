@@ -10,26 +10,24 @@ body {
 
 .main {
 	margin: 0 auto;
-	width: 50%;
-	height: 50%;
 }
 
 table {
 	margin: 0 auto;
 	border-collapse: collapse;
+	height: 500px;
+	width: 750px;
+	margin-bottom: 100px;
 }
 
 
 
 td {
 	border: 1px solid black;
-	height: 15px;
-	width: 15px;
 }
 
 tr {
 	border: 1px solid black;
-	height: 15px;
 }
 
 .header {
@@ -45,3 +43,38 @@ tr {
 .dead {
 	background: white;
 }
+
+.toppanel {
+	margin: 0;
+	text-align: center;
+	width: 700px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+}
+
+.header {
+	padding: 0px;
+	margin: 0;
+	
+}
+
+h1 {
+	margin: 0;
+}
+
+h3 {
+	margin: 0;
+}
+
+button {
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
