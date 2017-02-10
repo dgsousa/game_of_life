@@ -11,10 +11,11 @@ export default class TopPanel extends React.Component{
 			<div className="toppanel">
 				<div className="header"><h1>GAME OF LIFE</h1></div>
 				<div><h3>Generations: {this.props.counter}</h3></div>
-				<button onClick={this.props.onStart}>Start</button>
-				<button onClick={this.props.onStop}>Stop</button>
-				<button onClick={this.props.onClear}>Clear</button>
 			</div>
 		)
 	}
 } 
+
+React.propTypes = {
+	counter: React.PropTypes.number.isRequired
+}

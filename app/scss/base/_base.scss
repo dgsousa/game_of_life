@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: -webkit-linear-gradient(left, $background-one, $background-two);
+}
+
+table {
+	border-collapse: collapse;
+	border: 5px solid $table-border;
+}
+
+
+tr {
+	border: 1px solid $cell-border;
+}
+
+td {
+	border: 1px solid $cell-border;
+}
+
+.alive {
+	background: $alive;
+}
+
+.newborn {
+	background: $newborn;
+}
+
+.dead {
+	background: $dead;
+}
+
+button {
+	background: $button-background;
+	border-radius: 5px;
+	&:focus {
+		outline: none;
+	}
+}

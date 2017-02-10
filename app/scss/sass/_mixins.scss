@@ -1,0 +1,11 @@
+
+
+@mixin dimensions($width: null, $height: null) {
+	width: $width;
+	height: $height;
+}
+
+
+@mixin font-face($font-family) {
+	@import url('#{$path-font}#{$font-family}');
+}
