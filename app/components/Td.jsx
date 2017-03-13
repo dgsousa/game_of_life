@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class Td extends React.Component{
+export default class Td extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -28,8 +28,8 @@ export default class Td extends React.Component{
 
 	componentWillReceiveProps(nextProps) {
 		if(this.props !== nextProps) {
-			var status = "";
-			var age = this.state.age;
+			let status = "";
+			let age = this.state.age;
 			if(nextProps.board[nextProps.row][nextProps.col] === true && age === 0) {
 				status = "newborn";
 				age++;
@@ -51,7 +51,8 @@ export default class Td extends React.Component{
 		return (
 			<td 
 				className={this.state.status}
-				onClick={function() {this.props.add(this.props.row, this.props.col)}.bind(this)}></td>
+				onClick={()=> {this.props.add(this.props.row, this.props.col)}}>
+			</td>
 		)
 	}	
 }

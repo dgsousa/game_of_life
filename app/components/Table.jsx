@@ -9,14 +9,14 @@ export default class Table extends React.Component{
 	}
 	
 	render() {			
-		var tr = this.props.board.map(function(array, row) {
+		let tr = this.props.board.map((array, row)=> {
 			return (
 				<Tr key={row} 
 					row={row} 
 					board={this.props.board} 
 					add={this.props.add}/>
 			)
-		}.bind(this))
+		})
 
 		return (
 			<table>

@@ -23,11 +23,10 @@ export default class App extends React.Component{
 
 	createBoard(initial) {
 		let board = [];
-		for(var i = 0; i < this.props.height; i++) {
+		for(let i = 0; i < this.props.height; i++) {
 			let row = [];
-			for(var j = 0; j < this.props.width; j++) {
+			for(let j = 0; j < this.props.width; j++) {
 				let square = Math.random() >= initial;
-
 				row.push(square);
 			}
 			board.push(row);
@@ -80,8 +79,8 @@ export default class App extends React.Component{
 		let neighbors = 0;
 		let width = this.props.width;
 		let height = this.props.height;
-		for(var k = (row - 1); k < (row + 2); k++) {
-			for(var l = (col - 1); l < (col + 2); l++) {
+		for(let k = (row - 1); k < (row + 2); k++) {
+			for(let l = (col - 1); l < (col + 2); l++) {
 				if(k >= 0 && k < height && l >= 0 && l < width) {
 					if(this.state.board[k][l] && !(k === row && l === col)) {
 						neighbors++;

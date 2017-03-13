@@ -8,7 +8,7 @@ export default class Tr extends React.Component{
 	}
 		
 	render() {
-		var td = this.props.board[this.props.row].map(function(array, col) {
+		let td = this.props.board[this.props.row].map((array, col)=> {
 			return (
 				<Td key={col} 
 					col={col} 
@@ -16,7 +16,7 @@ export default class Tr extends React.Component{
 					board={this.props.board} 
 					add={this.props.add}/>
 			)
-		}.bind(this))
+		})
 
 		return (
 			<tr>{td}</tr>

@@ -21915,7 +21915,6 @@
 					var row = [];
 					for (var j = 0; j < this.props.width; j++) {
 						var square = Math.random() >= initial;
-
 						row.push(square);
 					}
 					board.push(row);
@@ -22135,12 +22134,14 @@
 		_createClass(Table, [{
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
+
 				var tr = this.props.board.map(function (array, row) {
 					return _react2.default.createElement(_Tr2.default, { key: row,
 						row: row,
-						board: this.props.board,
-						add: this.props.add });
-				}.bind(this));
+						board: _this2.props.board,
+						add: _this2.props.add });
+				});
 
 				return _react2.default.createElement(
 					'table',
@@ -22205,13 +22206,15 @@
 		_createClass(Tr, [{
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
+
 				var td = this.props.board[this.props.row].map(function (array, col) {
 					return _react2.default.createElement(_Td2.default, { key: col,
 						col: col,
-						row: this.props.row,
-						board: this.props.board,
-						add: this.props.add });
-				}.bind(this));
+						row: _this2.props.row,
+						board: _this2.props.board,
+						add: _this2.props.add });
+				});
 
 				return _react2.default.createElement(
 					'tr',
@@ -22315,11 +22318,13 @@
 		}, {
 			key: "render",
 			value: function render() {
+				var _this2 = this;
+
 				return _react2.default.createElement("td", {
 					className: this.state.status,
-					onClick: function () {
-						this.props.add(this.props.row, this.props.col);
-					}.bind(this) });
+					onClick: function onClick() {
+						_this2.props.add(_this2.props.row, _this2.props.col);
+					} });
 			}
 		}]);
 
