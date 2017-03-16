@@ -21928,7 +21928,6 @@
 			key: 'update',
 			value: function update() {
 				var board = [];
-
 				for (var i = 0; i < this.props.height; i++) {
 					var row = [];
 					for (var j = 0; j < this.props.width; j++) {
@@ -22032,67 +22031,43 @@
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var TopPanel = function (_React$Component) {
-		_inherits(TopPanel, _React$Component);
-
-		function TopPanel(props) {
-			_classCallCheck(this, TopPanel);
-
-			return _possibleConstructorReturn(this, (TopPanel.__proto__ || Object.getPrototypeOf(TopPanel)).call(this, props));
-		}
-
-		_createClass(TopPanel, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "toppanel" },
-					_react2.default.createElement(
-						"div",
-						{ className: "header" },
-						_react2.default.createElement(
-							"h1",
-							null,
-							"GAME OF LIFE"
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						null,
-						_react2.default.createElement(
-							"h3",
-							null,
-							"Generations: ",
-							this.props.counter
-						)
-					)
-				);
-			}
-		}]);
-
-		return TopPanel;
-	}(_react2.default.Component);
-
-	exports.default = TopPanel;
-
+	var TopPanel = function TopPanel(props) {
+		return _react2.default.createElement(
+			"div",
+			{ className: "toppanel" },
+			_react2.default.createElement(
+				"div",
+				{ className: "header" },
+				_react2.default.createElement(
+					"h1",
+					null,
+					"GAME OF LIFE"
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"h3",
+					null,
+					"Generations: ",
+					props.counter
+				)
+			)
+		);
+	};
 
 	_react2.default.propTypes = {
-		counter: _react2.default.PropTypes.number.isRequired
+		counter: _react.PropTypes.number.isRequired
 	};
+
+	exports.default = TopPanel;
 
 /***/ },
 /* 184 */
@@ -22122,8 +22097,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Board = function (_React$Component) {
-		_inherits(Board, _React$Component);
+	var Board = function (_Component) {
+		_inherits(Board, _Component);
 
 		function Board(props) {
 			_classCallCheck(this, Board);
@@ -22165,9 +22140,15 @@
 		}]);
 
 		return Board;
-	}(_react2.default.Component);
+	}(_react.Component);
 
 	exports.default = Board;
+
+
+	_react2.default.propTypes = {
+		board: _react.PropTypes.arrayOf(_react2.default.PropTypes.number.isRequired),
+		add: _react.PropTypes.func.isRequired
+	};
 
 /***/ },
 /* 185 */
@@ -22179,52 +22160,31 @@
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var Tile = function Tile(props) {
+		return _react2.default.createElement("div", { className: "tile",
+			style: props.style,
+			onClick: function onClick() {
+				props.add(props.row, props.column);
+			} });
+	};
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Tile = function (_React$Component) {
-		_inherits(Tile, _React$Component);
-
-		function Tile(props) {
-			_classCallCheck(this, Tile);
-
-			return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).call(this, props));
-		}
-
-		_createClass(Tile, [{
-			key: "render",
-			value: function render() {
-				var _this2 = this;
-
-				return _react2.default.createElement("div", { className: "tile",
-					style: this.props.style,
-					onClick: function onClick() {
-						_this2.props.add(_this2.props.row, _this2.props.column);
-					} });
-			}
-		}]);
-
-		return Tile;
-	}(_react2.default.Component);
-
-	// React.propTypes = {
-	// 	key: React.PropTypes.number.isRequired,
-	// 	row: React.PropTypes.number.isRequired,
-	// 	board: React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.bool.isRequired)),
-	// 	add: React.PropTypes.func.isRequired
-	// }
-
+	_react2.default.propTypes = {
+		key: _react.PropTypes.number.isRequired,
+		row: _react.PropTypes.number.isRequired,
+		column: _react.PropTypes.number.isRequired,
+		style: _react.PropTypes.shape({
+			top: _react.PropTypes.number.isRequired,
+			left: _react.PropTypes.number.isRequired,
+			background: _react.PropTypes.string.isRequired
+		}).isRequired,
+		add: _react.PropTypes.func.isRequired
+	};
 
 	exports.default = Tile;
 
@@ -22238,65 +22198,41 @@
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var BottomPanel = function (_React$Component) {
-		_inherits(BottomPanel, _React$Component);
-
-		function BottomPanel(props) {
-			_classCallCheck(this, BottomPanel);
-
-			return _possibleConstructorReturn(this, (BottomPanel.__proto__ || Object.getPrototypeOf(BottomPanel)).call(this, props));
-		}
-
-		_createClass(BottomPanel, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "bottompanel" },
-					_react2.default.createElement(
-						"button",
-						{ onClick: this.props.onStart },
-						"Start"
-					),
-					_react2.default.createElement(
-						"button",
-						{ onClick: this.props.onStop },
-						"Stop"
-					),
-					_react2.default.createElement(
-						"button",
-						{ onClick: this.props.onClear },
-						"Clear"
-					)
-				);
-			}
-		}]);
-
-		return BottomPanel;
-	}(_react2.default.Component);
-
-	exports.default = BottomPanel;
-
+	var BottomPanel = function BottomPanel(props) {
+		return _react2.default.createElement(
+			"div",
+			{ className: "bottompanel" },
+			_react2.default.createElement(
+				"button",
+				{ onClick: props.onStart },
+				"Start"
+			),
+			_react2.default.createElement(
+				"button",
+				{ onClick: props.onStop },
+				"Stop"
+			),
+			_react2.default.createElement(
+				"button",
+				{ onClick: props.onClear },
+				"Clear"
+			)
+		);
+	};
 
 	_react2.default.propTypes = {
-		onStart: _react2.default.PropTypes.func.isRequired,
-		onStop: _react2.default.PropTypes.func.isRequired,
-		onClear: _react2.default.PropTypes.func.isRequired
+		onStart: _react.PropTypes.func.isRequired,
+		onStop: _react.PropTypes.func.isRequired,
+		onClear: _react.PropTypes.func.isRequired
 	};
+
+	exports.default = BottomPanel;
 
 /***/ }
 /******/ ]);
