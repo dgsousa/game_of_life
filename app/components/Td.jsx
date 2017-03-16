@@ -51,7 +51,7 @@ export default class Td extends React.Component {
 		return (
 			<td 
 				className={this.state.status + " cell"}
-				onClick={()=> {this.props.add(this.props.row, this.props.col)}}>
+				/*onClick={()=> {this.props.add(this.props.row, this.props.col)}}*/>
 			</td>
 		)
 	}	

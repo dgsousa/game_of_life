@@ -21537,7 +21537,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Anton);", ""]);
 
 	// module
-	exports.push([module.id, "body {\n  background: -webkit-linear-gradient(left, black, #3CC47C); }\n\ntable {\n  border-collapse: collapse;\n  border: 5px solid #C5C1C0; }\n\ntr {\n  border: 1px solid black; }\n\ntd {\n  border: 1px solid black; }\n\n.alive {\n  background: red; }\n\n.newborn {\n  background: pink; }\n\n.dead {\n  background: transparent; }\n\nbutton {\n  background: #373737;\n  border-radius: 5px; }\n  button:focus {\n    outline: none; }\n\nbody {\n  font-family: \"Anton\", Helvetica, Arial, sans-serif;\n  letter-spacing: 15px;\n  text-align: center; }\n\n.header {\n  font-size: 50px;\n  color: #30415D;\n  text-shadow: 2px 2px black; }\n  @media (max-width: 565px) {\n    .header {\n      font-size: 24px; } }\n\nbutton {\n  font-size: 24px;\n  color: white; }\n\nbody {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  height: 100%; }\n\n.main {\n  margin: 0 auto;\n  padding: 0; }\n  @media (max-width: 850px) {\n    .main {\n      width: 100%;\n      height: 100%; } }\n\ntable {\n  margin: 0 auto; }\n  @media (max-width: 850px) {\n    table {\n      width: 100%;\n      height: 300px; } }\n\n.cell {\n  width: 10px;\n  height: 10px; }\n\n.toppanel {\n  width: 700px;\n  max-width: 100%;\n  margin: 0 auto 20px; }\n\n.bottompanel {\n  width: 500px;\n  max-width: 100%;\n  margin: 30px auto 50px; }\n\n.header {\n  padding: 0px;\n  margin: 0; }\n\nh1 {\n  margin: 0; }\n\nh3 {\n  margin: 40px; }\n  @media (max-width: 565px) {\n    h3 {\n      margin: 10px; } }\n\nbutton {\n  width: 100px;\n  height: 50px;\n  margin: 20px; }\n  @media (max-width: 565px) {\n    button {\n      width: 100%;\n      margin: 0; } }\n\n.header {\n  margin-bottom: 50px; }\n", ""]);
+	exports.push([module.id, "body {\n  background: -webkit-linear-gradient(left, black, #3CC47C); }\n\ntable {\n  border-collapse: collapse;\n  border: 5px solid #C5C1C0; }\n\ntr {\n  border: 1px solid black; }\n\ntd {\n  border: 1px solid black; }\n\n.alive {\n  background: red; }\n\n.newborn {\n  background: pink; }\n\n.dead {\n  background: transparent; }\n\nbutton {\n  background: #373737;\n  border-radius: 5px; }\n  button:focus {\n    outline: none; }\n\nbody {\n  font-family: \"Anton\", Helvetica, Arial, sans-serif;\n  letter-spacing: 15px;\n  text-align: center; }\n\n.header {\n  font-size: 50px;\n  color: #30415D;\n  text-shadow: 2px 2px black; }\n  @media (max-width: 565px) {\n    .header {\n      font-size: 24px; } }\n\nbutton {\n  font-size: 24px;\n  color: white; }\n\nbody {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  height: 100%; }\n\n.main {\n  margin: 0 auto;\n  padding: 0; }\n  @media (max-width: 850px) {\n    .main {\n      width: 100%;\n      height: 100%; } }\n\n.board {\n  position: relative;\n  border: 5px solid grey;\n  width: 900px;\n  height: 600px;\n  margin: 0 auto; }\n  @media (max-width: 850px) {\n    .board {\n      width: 100%;\n      height: 300px; } }\n\n.tile {\n  position: absolute;\n  border: 1px solid black;\n  width: 15px;\n  height: 15px;\n  box-sizing: border-box; }\n\n.toppanel {\n  width: 700px;\n  max-width: 100%;\n  margin: 0 auto 10px; }\n\n.bottompanel {\n  width: 500px;\n  max-width: 100%;\n  margin: 30px auto 50px; }\n\n.header {\n  padding: 0px;\n  margin: 0; }\n\nh1 {\n  padding-bottom: 0;\n  margin: 0 auto -20px; }\n\nh3 {\n  margin: 20px; }\n  @media (max-width: 565px) {\n    h3 {\n      margin: 10px; } }\n\nbutton {\n  width: 100px;\n  height: 50px;\n  margin: 20px; }\n  @media (max-width: 565px) {\n    button {\n      width: 100%;\n      margin: 0; } }\n\n.header {\n  margin-bottom: 50px; }\n", ""]);
 
 	// exports
 
@@ -21870,11 +21870,11 @@
 
 	var _TopPanel2 = _interopRequireDefault(_TopPanel);
 
-	var _Table = __webpack_require__(184);
+	var _Board = __webpack_require__(184);
 
-	var _Table2 = _interopRequireDefault(_Table);
+	var _Board2 = _interopRequireDefault(_Board);
 
-	var _ButtonPanel = __webpack_require__(187);
+	var _ButtonPanel = __webpack_require__(186);
 
 	var _ButtonPanel2 = _interopRequireDefault(_ButtonPanel);
 
@@ -21886,8 +21886,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var App = function (_React$Component) {
-		_inherits(App, _React$Component);
+	var App = function (_Component) {
+		_inherits(App, _Component);
 
 		function App(props) {
 			_classCallCheck(this, App);
@@ -21914,7 +21914,7 @@
 				for (var i = 0; i < this.props.height; i++) {
 					var row = [];
 					for (var j = 0; j < this.props.width; j++) {
-						var square = Math.random() >= initial;
+						var square = Math.random() >= initial ? 1 : 0;
 						row.push(square);
 					}
 					board.push(row);
@@ -21934,12 +21934,12 @@
 					for (var j = 0; j < this.props.width; j++) {
 						var square = false;
 						var neighbors = this.getNeighbors(i, j);
-						if (neighbors === 3) {
-							row.push(true);
-						} else if (this.state.board[i][j] && neighbors === 2) {
-							row.push(true);
+						if (this.state.board[i][j] && (neighbors === 2 || neighbors === 3)) {
+							row.push(2);
+						} else if (!this.state.board[i][j] && neighbors === 3) {
+							row.push(1);
 						} else {
-							row.push(false);
+							row.push(0);
 						}
 					}
 					board.push(row);
@@ -21986,7 +21986,7 @@
 		}, {
 			key: 'addSquare',
 			value: function addSquare(row, col) {
-				this.state.board[row][col] ? this.state.board[row][col] = false : this.state.board[row][col] = true;
+				this.state.board[row][col] ? this.state.board[row][col] = 0 : this.state.board[row][col] = 1;
 				this.setState({
 					board: this.state.board
 				});
@@ -21999,7 +21999,7 @@
 					{ className: 'main' },
 					_react2.default.createElement(_TopPanel2.default, {
 						counter: this.state.counter }),
-					_react2.default.createElement(_Table2.default, {
+					_react2.default.createElement(_Board2.default, {
 						board: this.state.board,
 						add: this.addSquare.bind(this) }),
 					_react2.default.createElement(_ButtonPanel2.default, {
@@ -22012,14 +22012,14 @@
 		}]);
 
 		return App;
-	}(_react2.default.Component);
+	}(_react.Component);
 
 	exports.default = App;
 
 
 	_react2.default.propTypes = {
-		height: _react2.default.PropTypes.number.isRequired,
-		width: _react2.default.PropTypes.number.isRequired
+		height: _react.PropTypes.number.isRequired,
+		width: _react.PropTypes.number.isRequired
 	};
 
 /***/ },
@@ -22110,9 +22110,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Tr = __webpack_require__(185);
+	var _Tile = __webpack_require__(185);
 
-	var _Tr2 = _interopRequireDefault(_Tr);
+	var _Tile2 = _interopRequireDefault(_Tile);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22122,123 +22122,55 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Table = function (_React$Component) {
-		_inherits(Table, _React$Component);
+	var Board = function (_React$Component) {
+		_inherits(Board, _React$Component);
 
-		function Table(props) {
-			_classCallCheck(this, Table);
+		function Board(props) {
+			_classCallCheck(this, Board);
 
-			return _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
+			return _possibleConstructorReturn(this, (Board.__proto__ || Object.getPrototypeOf(Board)).call(this, props));
 		}
 
-		_createClass(Table, [{
+		_createClass(Board, [{
+			key: 'getColor',
+			value: function getColor(num) {
+				return num === 0 ? 'transparent' : num === 1 ? 'pink' : 'red';
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var _this2 = this;
 
-				var tr = this.props.board.map(function (array, row) {
-					return _react2.default.createElement(_Tr2.default, { key: row,
-						row: row,
-						board: _this2.props.board,
-						add: _this2.props.add });
+				var tiles = this.props.board.map(function (array, row) {
+					return array.map(function (tile, column) {
+						var style = {
+							top: row * 15,
+							left: column * 15,
+							background: _this2.getColor(tile)
+						};
+						return _react2.default.createElement(_Tile2.default, { key: row * array.length + column,
+							style: style,
+							row: row,
+							column: column,
+							add: _this2.props.add });
+					});
 				});
 
 				return _react2.default.createElement(
-					'table',
-					null,
-					_react2.default.createElement(
-						'tbody',
-						null,
-						tr
-					)
+					'div',
+					{ className: 'board' },
+					tiles
 				);
 			}
 		}]);
 
-		return Table;
+		return Board;
 	}(_react2.default.Component);
 
-	exports.default = Table;
-
-
-	_react2.default.propTypes = {
-		board: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.bool.isRequired)),
-		add: _react2.default.PropTypes.func.isRequired
-	};
+	exports.default = Board;
 
 /***/ },
 /* 185 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Td = __webpack_require__(186);
-
-	var _Td2 = _interopRequireDefault(_Td);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Tr = function (_React$Component) {
-		_inherits(Tr, _React$Component);
-
-		function Tr(props) {
-			_classCallCheck(this, Tr);
-
-			return _possibleConstructorReturn(this, (Tr.__proto__ || Object.getPrototypeOf(Tr)).call(this, props));
-		}
-
-		_createClass(Tr, [{
-			key: 'render',
-			value: function render() {
-				var _this2 = this;
-
-				var td = this.props.board[this.props.row].map(function (array, col) {
-					return _react2.default.createElement(_Td2.default, { key: col,
-						col: col,
-						row: _this2.props.row,
-						board: _this2.props.board,
-						add: _this2.props.add });
-				});
-
-				return _react2.default.createElement(
-					'tr',
-					null,
-					td
-				);
-			}
-		}]);
-
-		return Tr;
-	}(_react2.default.Component);
-
-	exports.default = Tr;
-
-
-	_react2.default.propTypes = {
-		key: _react2.default.PropTypes.number.isRequired,
-		row: _react2.default.PropTypes.number.isRequired,
-		board: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.bool.isRequired)),
-		add: _react2.default.PropTypes.func.isRequired
-	};
-
-/***/ },
-/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22261,89 +22193,43 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Td = function (_React$Component) {
-		_inherits(Td, _React$Component);
+	var Tile = function (_React$Component) {
+		_inherits(Tile, _React$Component);
 
-		function Td(props) {
-			_classCallCheck(this, Td);
+		function Tile(props) {
+			_classCallCheck(this, Tile);
 
-			var _this = _possibleConstructorReturn(this, (Td.__proto__ || Object.getPrototypeOf(Td)).call(this, props));
-
-			_this.state = {
-				status: "dead",
-				age: 0
-			};
-			return _this;
+			return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).call(this, props));
 		}
 
-		_createClass(Td, [{
-			key: "componentWillMount",
-			value: function componentWillMount() {
-				var status = "";
-				var age = 0;
-				if (this.props.board[this.props.row][this.props.col] === true) {
-					status = "newborn";
-					age = 1;
-				} else {
-					status = "dead";
-					age = 0;
-				}
-				this.setState({
-					status: status,
-					age: age
-				});
-			}
-		}, {
-			key: "componentWillReceiveProps",
-			value: function componentWillReceiveProps(nextProps) {
-				if (this.props !== nextProps) {
-					var status = "";
-					var age = this.state.age;
-					if (nextProps.board[nextProps.row][nextProps.col] === true && age === 0) {
-						status = "newborn";
-						age++;
-					} else if (nextProps.board[nextProps.row][nextProps.col] === true && age >= 1) {
-						status = "alive";
-						age++;
-					} else {
-						status = "dead";
-						age = 0;
-					}
-					this.setState({
-						status: status,
-						age: age
-					});
-				}
-			}
-		}, {
+		_createClass(Tile, [{
 			key: "render",
 			value: function render() {
 				var _this2 = this;
 
-				return _react2.default.createElement("td", {
-					className: this.state.status + " cell",
+				return _react2.default.createElement("div", { className: "tile",
+					style: this.props.style,
 					onClick: function onClick() {
-						_this2.props.add(_this2.props.row, _this2.props.col);
+						_this2.props.add(_this2.props.row, _this2.props.column);
 					} });
 			}
 		}]);
 
-		return Td;
+		return Tile;
 	}(_react2.default.Component);
 
-	exports.default = Td;
+	// React.propTypes = {
+	// 	key: React.PropTypes.number.isRequired,
+	// 	row: React.PropTypes.number.isRequired,
+	// 	board: React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.bool.isRequired)),
+	// 	add: React.PropTypes.func.isRequired
+	// }
 
 
-	_react2.default.propTypes = {
-		key: _react2.default.PropTypes.number.isRequired,
-		col: _react2.default.PropTypes.number.isRequired,
-		row: _react2.default.PropTypes.number.isRequired,
-		board: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.bool.isRequired)),
-		add: _react2.default.PropTypes.func.isRequired
-	};
+	exports.default = Tile;
 
 /***/ },
-/* 187 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

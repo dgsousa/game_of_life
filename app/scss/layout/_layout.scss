@@ -13,7 +13,11 @@ body {
 	}
 }
 
-table {
+.board {
+	position: relative;
+	border: 5px solid grey;
+	width: 900px;
+	height: 600px;
 	margin: 0 auto;
 	@media #{$break-tablet} {
 		width: 100%;
@@ -21,14 +25,17 @@ table {
 	}
 }
 
-.cell {
-	@include dimensions(10px, 10px);
+.tile {
+	position: absolute;
+	border: 1px solid black;
+	@include dimensions(15px, 15px);
+	box-sizing: border-box;
 }
 
 .toppanel {
 	width: 700px;
 	max-width: 100%;
-	margin: 0 auto 20px;
+	margin: 0 auto 10px;
 }
 
 .bottompanel {
@@ -43,11 +50,12 @@ table {
 }
 
 h1 {
-	margin: 0;
+	padding-bottom: 0;
+	margin: 0 auto -20px;
 }
 
 h3 {
-	margin: 40px;
+	margin: 20px;
 	@media #{$break-phone} {
 		margin: 10px;
 	}

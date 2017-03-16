@@ -1,13 +1,11 @@
-import React from 'react';
-
-
+import React, {Component, PropTypes} from 'react';
 import TopPanel from './TopPanel.jsx';
-import Table from './Table.jsx';
+import Board from './Board.jsx';
 import ButtonPanel from './ButtonPanel.jsx';
 
 
 
-export default class App extends React.Component{
+export default class App extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -26,7 +24,7 @@ export default class App extends React.Component{
 		for(let i = 0; i < this.props.height; i++) {
 			let row = [];
 			for(let j = 0; j < this.props.width; j++) {
-				let square = Math.random() >= initial;
+				let square = Math.random() >= initial ? 1 : 0;
 				row.push(square);
 			}
 			board.push(row);
@@ -45,12 +43,12 @@ export default class App extends React.Component{
 			for(let j = 0; j < this.props.width; j++) {
 				let square = false;
 				let neighbors = this.getNeighbors(i, j);
-				if(neighbors === 3) {
-					row.push(true)
-				} else if(this.state.board[i][j] && neighbors === 2) {
-					row.push(true)
+				if(this.state.board[i][j] && (neighbors === 2 || neighbors === 3)) {
+					row.push(2);
+				} else if(!this.state.board[i][j] && neighbors === 3) {
+					row.push(1);
 				} else {
-					row.push(false);
+					row.push(0);
 				}
 			}
 			board.push(row);
@@ -92,7 +90,7 @@ export default class App extends React.Component{
 	}
 
 	addSquare(row, col) {
-		this.state.board[row][col] ? this.state.board[row][col] = false : this.state.board[row][col] = true;
+		this.state.board[row][col] ? this.state.board[row][col] = 0 : this.state.board[row][col] = 1;
 		this.setState({
 			board: this.state.board
 		})
@@ -104,10 +102,10 @@ export default class App extends React.Component{
 			<div className="main">
 				<TopPanel 
 					counter={this.state.counter}/>
-				
-				<Table 	
+				<Board 	
 					board={this.state.board} 
 					add={this.addSquare.bind(this)}/>
+				
 				<ButtonPanel 
 					onStart={this.start.bind(this)}
 					onStop={this.stop.bind(this)}
@@ -120,8 +118,8 @@ export default class App extends React.Component{
 
 
 React.propTypes = {
-	height: React.PropTypes.number.isRequired,
-	width: React.PropTypes.number.isRequired
+	height: PropTypes.number.isRequired,
+	width: PropTypes.number.isRequired
 }
 
 
