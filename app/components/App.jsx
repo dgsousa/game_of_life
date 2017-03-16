@@ -24,7 +24,7 @@ export default class App extends Component{
 		for(let i = 0; i < this.props.height; i++) {
 			let row = [];
 			for(let j = 0; j < this.props.width; j++) {
-				let square = Math.random() >= initial ? 1 : 0;
+				let square = Math.random() >= initial ? 'pink' : '';
 				row.push(square);
 			}
 			board.push(row);
@@ -43,11 +43,11 @@ export default class App extends Component{
 				let square = false;
 				let neighbors = this.getNeighbors(i, j);
 				if(this.state.board[i][j] && (neighbors === 2 || neighbors === 3)) {
-					row.push(2);
+					row.push('red');
 				} else if(!this.state.board[i][j] && neighbors === 3) {
-					row.push(1);
+					row.push('pink');
 				} else {
-					row.push(0);
+					row.push('');
 				}
 			}
 			board.push(row);
@@ -89,7 +89,7 @@ export default class App extends Component{
 	}
 
 	addSquare(row, col) {
-		this.state.board[row][col] ? this.state.board[row][col] = 0 : this.state.board[row][col] = 1;
+		this.state.board[row][col] ? this.state.board[row][col] = '' : this.state.board[row][col] = 'pink';
 		this.setState({
 			board: this.state.board
 		})

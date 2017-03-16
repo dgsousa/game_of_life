@@ -46,16 +46,19 @@ body {
 
 .header {
 	padding: 0px;
-	margin: 0;
+	padding-bottom: -20px;
+	margin-top: 20px;
+	margin: -20px;
 }
 
 h1 {
-	padding-bottom: 0;
-	margin: 0 auto -20px;
+	padding-bottom: -10px;
+	margin: 10px auto 0px;
 }
 
 h3 {
-	margin: 20px;
+	margin-top: -50px;
+	padding: 0;
 	@media #{$break-phone} {
 		margin: 10px;
 	}
@@ -63,7 +66,7 @@ h3 {
 
 button {
 	@include dimensions(100px, 50px);
-	margin: 20px;
+	margin: 0 20px;
 	@media #{$break-phone} {
 		width: 100%;
 		margin: 0;

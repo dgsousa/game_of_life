@@ -7,11 +7,6 @@ export default class Board extends Component {
 	constructor(props) {
 		super(props);
 	}
-
-	getColor(num) {
-		return num === 0 ? 'transparent' : 
-			   num === 1 ? 'pink' : 'red'
-	}
 	
 	render() {		
 		let tiles = this.props.board.map((array, row)=> {
@@ -19,7 +14,7 @@ export default class Board extends Component {
 				let style = {
 					top: row * 15,
 					left: column * 15,
-					background: this.getColor(tile)
+					background: tile || 'transparent'
 				}
 				return (
 					<Tile key={row*array.length + column}
