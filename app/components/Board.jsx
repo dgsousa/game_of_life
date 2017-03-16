@@ -42,8 +42,8 @@ export default class Board extends Component {
 
 
 React.propTypes = {
-	height: PropTypes.number.isRequired,
-	width: PropTypes.number.isRequired
+	board: PropTypes.arrayOf(React.PropTypes.number.isRequired),
+	add: PropTypes.func.isRequired
 }
 
 

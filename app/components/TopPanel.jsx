@@ -1,21 +1,17 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 
-export default class TopPanel extends React.Component{
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		return (
-			<div className="toppanel">
-				<div className="header"><h1>GAME OF LIFE</h1></div>
-				<div><h3>Generations: {this.props.counter}</h3></div>
-			</div>
-		)
-	}
+const TopPanel = (props) => {
+	return (
+		<div className="toppanel">
+			<div className="header"><h1>GAME OF LIFE</h1></div>
+			<div><h3>Generations: {props.counter}</h3></div>
+		</div>
+	)
 } 
 
 React.propTypes = {
-	counter: React.PropTypes.number.isRequired
+	counter: PropTypes.number.isRequired
 }
+
+export default TopPanel;

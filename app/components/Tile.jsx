@@ -1,25 +1,26 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 
 
-export default class Tile extends React.Component{
-	constructor(props) {
-		super(props);
-	}
-		
-	render() {
-		return (
-			<div className="tile"
-				 style={this.props.style}
-				 onClick={()=> {this.props.add(this.props.row, this.props.column)}}>
-			</div>
-		) 
-	}
+const Tile = (props) =>{	
+	return (
+		<div className="tile"
+			 style={props.style}
+			 onClick={()=> {props.add(props.row, props.column)}}>
+		</div>
+	) 
 }
 
-// React.propTypes = {
-// 	key: React.PropTypes.number.isRequired,
-// 	row: React.PropTypes.number.isRequired,
-// 	board: React.PropTypes.arrayOf(React.PropTypes.arrayOf(React.PropTypes.bool.isRequired)),
-// 	add: React.PropTypes.func.isRequired
-// }
+React.propTypes = {
+	key: PropTypes.number.isRequired,
+	row: PropTypes.number.isRequired,
+	column: PropTypes.number.isRequired,
+	style: PropTypes.shape({
+		top: PropTypes.number.isRequired,
+		left: PropTypes.number.isRequired,
+		background: PropTypes.string.isRequired
+	}).isRequired,
+	add: PropTypes.func.isRequired
+}
+
+export default Tile;

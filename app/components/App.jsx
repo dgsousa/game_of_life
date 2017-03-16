@@ -37,7 +37,6 @@ export default class App extends Component{
 
 	update() {
 		let board = [];
-
 		for(let i = 0; i < this.props.height; i++) {
 			let row = [];
 			for(let j = 0; j < this.props.width; j++) {
