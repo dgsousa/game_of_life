@@ -21537,7 +21537,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Anton);", ""]);
 
 	// module
-	exports.push([module.id, "body {\n  background: -webkit-linear-gradient(left, black, #3CC47C); }\n\ntable {\n  border-collapse: collapse;\n  border: 5px solid #C5C1C0; }\n\ntr {\n  border: 1px solid black; }\n\ntd {\n  border: 1px solid black; }\n\n.alive {\n  background: red; }\n\n.newborn {\n  background: pink; }\n\n.dead {\n  background: transparent; }\n\nbutton {\n  background: #373737;\n  border-radius: 5px; }\n  button:focus {\n    outline: none; }\n\nbody {\n  font-family: \"Anton\", Helvetica, Arial, sans-serif;\n  letter-spacing: 15px;\n  text-align: center; }\n\n.header {\n  font-size: 50px;\n  color: #30415D;\n  text-shadow: 2px 2px black; }\n  @media (max-width: 565px) {\n    .header {\n      font-size: 24px; } }\n\nbutton {\n  font-size: 24px;\n  color: white; }\n\nbody {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  height: 100%; }\n\n.main {\n  margin: 0 auto;\n  padding: 0; }\n  @media (max-width: 850px) {\n    .main {\n      width: 100%;\n      height: 100%; } }\n\n.board {\n  position: relative;\n  border: 5px solid grey;\n  width: 900px;\n  height: 600px;\n  margin: 0 auto; }\n  @media (max-width: 850px) {\n    .board {\n      width: 100%;\n      height: 300px; } }\n\n.tile {\n  position: absolute;\n  border: 1px solid black;\n  width: 15px;\n  height: 15px;\n  box-sizing: border-box; }\n\n.toppanel {\n  width: 700px;\n  max-width: 100%;\n  margin: 0 auto 10px; }\n\n.bottompanel {\n  width: 500px;\n  max-width: 100%;\n  margin: 30px auto 50px; }\n\n.header {\n  padding: 0px;\n  margin: 0; }\n\nh1 {\n  padding-bottom: 0;\n  margin: 0 auto -20px; }\n\nh3 {\n  margin: 20px; }\n  @media (max-width: 565px) {\n    h3 {\n      margin: 10px; } }\n\nbutton {\n  width: 100px;\n  height: 50px;\n  margin: 20px; }\n  @media (max-width: 565px) {\n    button {\n      width: 100%;\n      margin: 0; } }\n\n.header {\n  margin-bottom: 50px; }\n", ""]);
+	exports.push([module.id, "body {\n  background: -webkit-linear-gradient(left, black, #3CC47C); }\n\ntable {\n  border-collapse: collapse;\n  border: 5px solid #C5C1C0; }\n\ntr {\n  border: 1px solid black; }\n\ntd {\n  border: 1px solid black; }\n\n.alive {\n  background: red; }\n\n.newborn {\n  background: pink; }\n\n.dead {\n  background: transparent; }\n\nbutton {\n  background: #373737;\n  border-radius: 5px; }\n  button:focus {\n    outline: none; }\n\nbody {\n  font-family: \"Anton\", Helvetica, Arial, sans-serif;\n  letter-spacing: 15px;\n  text-align: center; }\n\n.header {\n  font-size: 50px;\n  color: #30415D;\n  text-shadow: 2px 2px black; }\n  @media (max-width: 565px) {\n    .header {\n      font-size: 24px; } }\n\nbutton {\n  font-size: 24px;\n  color: white; }\n\nbody {\n  padding: 0;\n  margin: 0;\n  width: 100%;\n  height: 100%; }\n\n.main {\n  margin: 0 auto;\n  padding: 0; }\n  @media (max-width: 850px) {\n    .main {\n      width: 100%;\n      height: 100%; } }\n\n.board {\n  position: relative;\n  border: 5px solid grey;\n  width: 900px;\n  height: 600px;\n  margin: 0 auto; }\n  @media (max-width: 850px) {\n    .board {\n      width: 100%;\n      height: 300px; } }\n\n.tile {\n  position: absolute;\n  border: 1px solid black;\n  width: 15px;\n  height: 15px;\n  box-sizing: border-box; }\n\n.toppanel {\n  width: 700px;\n  max-width: 100%;\n  margin: 0 auto 10px; }\n\n.bottompanel {\n  width: 500px;\n  max-width: 100%;\n  margin: 30px auto 50px; }\n\n.header {\n  padding: 0px;\n  padding-bottom: -20px;\n  margin-top: 20px;\n  margin: -20px; }\n\nh1 {\n  padding-bottom: -10px;\n  margin: 10px auto 0px; }\n\nh3 {\n  margin-top: -50px;\n  padding: 0; }\n  @media (max-width: 565px) {\n    h3 {\n      margin: 10px; } }\n\nbutton {\n  width: 100px;\n  height: 50px;\n  margin: 0 20px; }\n  @media (max-width: 565px) {\n    button {\n      width: 100%;\n      margin: 0; } }\n\n.header {\n  margin-bottom: 50px; }\n", ""]);
 
 	// exports
 
@@ -21914,7 +21914,7 @@
 				for (var i = 0; i < this.props.height; i++) {
 					var row = [];
 					for (var j = 0; j < this.props.width; j++) {
-						var square = Math.random() >= initial ? 1 : 0;
+						var square = Math.random() >= initial ? 'pink' : '';
 						row.push(square);
 					}
 					board.push(row);
@@ -21934,11 +21934,11 @@
 						var square = false;
 						var neighbors = this.getNeighbors(i, j);
 						if (this.state.board[i][j] && (neighbors === 2 || neighbors === 3)) {
-							row.push(2);
+							row.push('red');
 						} else if (!this.state.board[i][j] && neighbors === 3) {
-							row.push(1);
+							row.push('pink');
 						} else {
-							row.push(0);
+							row.push('');
 						}
 					}
 					board.push(row);
@@ -21985,7 +21985,7 @@
 		}, {
 			key: 'addSquare',
 			value: function addSquare(row, col) {
-				this.state.board[row][col] ? this.state.board[row][col] = 0 : this.state.board[row][col] = 1;
+				this.state.board[row][col] ? this.state.board[row][col] = '' : this.state.board[row][col] = 'pink';
 				this.setState({
 					board: this.state.board
 				});
@@ -22107,11 +22107,6 @@
 		}
 
 		_createClass(Board, [{
-			key: 'getColor',
-			value: function getColor(num) {
-				return num === 0 ? 'transparent' : num === 1 ? 'pink' : 'red';
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var _this2 = this;
@@ -22121,7 +22116,7 @@
 						var style = {
 							top: row * 15,
 							left: column * 15,
-							background: _this2.getColor(tile)
+							background: tile || 'transparent'
 						};
 						return _react2.default.createElement(_Tile2.default, { key: row * array.length + column,
 							style: style,
