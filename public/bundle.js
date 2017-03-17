@@ -21896,7 +21896,6 @@
 
 			_this.state = {
 				board: [],
-				interval: null,
 				counter: 0
 			};
 			return _this;
@@ -21951,13 +21950,13 @@
 		}, {
 			key: 'start',
 			value: function start() {
-				this.state.interval = setInterval(this.update.bind(this), 100);
+				this.interval = setInterval(this.update.bind(this), 100);
 			}
 		}, {
 			key: 'stop',
 			value: function stop() {
-				if (this.state.interval) {
-					clearInterval(this.state.interval);
+				if (this.interval) {
+					clearInterval(this.interval);
 				}
 			}
 		}, {

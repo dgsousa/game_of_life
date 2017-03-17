@@ -10,7 +10,6 @@ export default class App extends Component{
 		super(props);
 		this.state = {
 			board: [],
-			interval: null,
 			counter: 0
 		}
 	}
@@ -59,12 +58,12 @@ export default class App extends Component{
 	}
 
 	start() {
-		this.state.interval = setInterval(this.update.bind(this), 100);
+		this.interval = setInterval(this.update.bind(this), 100);
 	}
 
 	stop() {
-		if(this.state.interval) {
-			clearInterval(this.state.interval);
+		if(this.interval) {
+			clearInterval(this.interval);
 		}
 	}
 
