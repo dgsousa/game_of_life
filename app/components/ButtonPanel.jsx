@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes} from "react";
 
 
 const BottomPanel = (props) => {	
@@ -8,14 +8,14 @@ const BottomPanel = (props) => {
 			<button onClick={props.onStop}>Stop</button>
 			<button onClick={props.onClear}>Clear</button>
 		</div>
-	)	
-}
+	);	
+};
 
 
 React.propTypes = {
 	onStart: PropTypes.func.isRequired,
 	onStop: PropTypes.func.isRequired,
 	onClear: PropTypes.func.isRequired
-}
+};
 
 export default BottomPanel;

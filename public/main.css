@@ -1,0 +1,115 @@
+@import url(https://fonts.googleapis.com/css?family=Anton);body {
+  background: -webkit-linear-gradient(left, black, #3CC47C); }
+
+table {
+  border-collapse: collapse;
+  border: 5px solid #C5C1C0; }
+
+tr {
+  border: 1px solid black; }
+
+td {
+  border: 1px solid black; }
+
+.alive {
+  background: red; }
+
+.newborn {
+  background: pink; }
+
+.dead {
+  background: transparent; }
+
+button {
+  background: #373737;
+  border-radius: 5px; }
+  button:focus {
+    outline: none; }
+
+body {
+  font-family: "Anton", Helvetica, Arial, sans-serif;
+  letter-spacing: 15px;
+  text-align: center; }
+
+.header {
+  font-size: 50px;
+  color: #30415D;
+  text-shadow: 2px 2px black; }
+  @media (max-width: 565px) {
+    .header {
+      font-size: 24px; } }
+
+button {
+  font-size: 24px;
+  color: white; }
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+.main {
+  margin: 0 auto;
+  padding: 0; }
+  @media (max-width: 850px) {
+    .main {
+      width: 100%;
+      height: 100%; } }
+
+.board {
+  position: relative;
+  border: 5px solid grey;
+  width: 900px;
+  height: 600px;
+  margin: 0 auto; }
+  @media (max-width: 850px) {
+    .board {
+      width: 100%;
+      height: 300px; } }
+
+.tile {
+  position: absolute;
+  border: 1px solid black;
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box; }
+
+.toppanel {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto 10px; }
+
+.bottompanel {
+  width: 500px;
+  max-width: 100%;
+  margin: 30px auto 50px; }
+
+.header {
+  padding: 0px;
+  padding-bottom: -20px;
+  margin-top: 20px;
+  margin: -20px; }
+
+h1 {
+  padding-bottom: -10px;
+  margin: 10px auto 0px; }
+
+h3 {
+  margin-top: -50px;
+  padding: 0; }
+  @media (max-width: 565px) {
+    h3 {
+      margin: 10px; } }
+
+button {
+  width: 100px;
+  height: 50px;
+  margin: 0 20px; }
+  @media (max-width: 565px) {
+    button {
+      width: 100%;
+      margin: 0; } }
+
+.header {
+  margin-bottom: 50px; }

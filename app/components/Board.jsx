@@ -1,5 +1,5 @@
-import React, {Component, PropTypes} from 'react';
-import Tile from './Tile.jsx';
+import React, {Component, PropTypes} from "react";
+import Tile from "./Tile.jsx";
 
 
 
@@ -14,23 +14,24 @@ export default class Board extends Component {
 				let style = {
 					top: row * 15,
 					left: column * 15,
-					background: tile || 'transparent'
-				}
+					background: tile || "transparent"
+				};
 				return (
-					<Tile key={row*array.length + column}
-						  style={style}
-						  row={row}
-						  column={column}
-						  add={this.props.add} />
-						)
-					})
-				})
+					<Tile 
+						key={row*array.length + column}
+						style={style}
+						row={row}
+						column={column}
+						add={this.props.add} />
+				);
+			});
+		});
 
 		return (
 			<div className="board">
 				{tiles}
 			</div>
-		)
+		);
 	}
 }
 
@@ -39,7 +40,7 @@ export default class Board extends Component {
 React.propTypes = {
 	board: PropTypes.arrayOf(React.PropTypes.number.isRequired),
 	add: PropTypes.func.isRequired
-}
+};
 
 
 

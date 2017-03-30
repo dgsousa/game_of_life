@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react';
-import TopPanel from './TopPanel.jsx';
-import Board from './Board.jsx';
-import ButtonPanel from './ButtonPanel.jsx';
+import React, {Component, PropTypes} from "react";
+import TopPanel from "./TopPanel.jsx";
+import Board from "./Board.jsx";
+import ButtonPanel from "./ButtonPanel.jsx";
 
 
 
@@ -11,7 +11,7 @@ export default class App extends Component{
 		this.state = {
 			board: [],
 			counter: 0
-		}
+		};
 	}
 
 	componentWillMount() {
@@ -23,7 +23,7 @@ export default class App extends Component{
 		for(let i = 0; i < this.props.height; i++) {
 			let row = [];
 			for(let j = 0; j < this.props.width; j++) {
-				let square = Math.random() >= initial ? 'pink' : '';
+				let square = Math.random() >= initial ? "pink" : "";
 				row.push(square);
 			}
 			board.push(row);
@@ -39,14 +39,13 @@ export default class App extends Component{
 		for(let i = 0; i < this.props.height; i++) {
 			let row = [];
 			for(let j = 0; j < this.props.width; j++) {
-				let square = false;
 				let neighbors = this.getNeighbors(i, j);
 				if(this.state.board[i][j] && (neighbors === 2 || neighbors === 3)) {
-					row.push('red');
+					row.push("red");
 				} else if(!this.state.board[i][j] && neighbors === 3) {
-					row.push('pink');
+					row.push("pink");
 				} else {
-					row.push('');
+					row.push("");
 				}
 			}
 			board.push(row);
@@ -54,7 +53,7 @@ export default class App extends Component{
 		this.setState({
 			board: board,
 			counter: this.state.counter + 1
-		})
+		});
 	}
 
 	start() {
@@ -78,7 +77,7 @@ export default class App extends Component{
 		for(let k = (row - 1); k < (row + 2); k++) {
 			for(let l = (col - 1); l < (col + 2); l++) {
 				if(k >= 0 && k < height && l >= 0 && l < width) {
-					if(this.state.board[k][l] && !(k === row && l === col)) {
+					if(this.state.board[k][l] && (k != row || l != col)) {
 						neighbors++;
 					}	
 				}
@@ -88,10 +87,10 @@ export default class App extends Component{
 	}
 
 	addSquare(row, col) {
-		this.state.board[row][col] ? this.state.board[row][col] = '' : this.state.board[row][col] = 'pink';
+		this.state.board[row][col] ? this.state.board[row][col] = "" : this.state.board[row][col] = "pink";
 		this.setState({
 			board: this.state.board
-		})
+		});
 	}
 
 
@@ -110,7 +109,7 @@ export default class App extends Component{
 					onClear={this.clear.bind(this)}
 					/>
 			</div>
-		)
+		);
 	}
 }
 
@@ -118,7 +117,7 @@ export default class App extends Component{
 React.propTypes = {
 	height: PropTypes.number.isRequired,
 	width: PropTypes.number.isRequired
-}
+};
 
 
 

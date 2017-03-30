@@ -1,15 +1,16 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes} from "react";
 
 
 
 const Tile = (props) =>{	
 	return (
-		<div className="tile"
-			 style={props.style}
-			 onClick={()=> {props.add(props.row, props.column)}}>
+		<div 
+			className="tile"
+			style={props.style}
+			onClick={()=> {props.add(props.row, props.column);}}>
 		</div>
-	) 
-}
+	); 
+};
 
 React.propTypes = {
 	key: PropTypes.number.isRequired,
@@ -21,6 +22,6 @@ React.propTypes = {
 		background: PropTypes.string.isRequired
 	}).isRequired,
 	add: PropTypes.func.isRequired
-}
+};
 
 export default Tile;
