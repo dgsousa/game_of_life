@@ -9554,14 +9554,10 @@ var App = function (_Component) {
 		key: "getNeighbors",
 		value: function getNeighbors(row, col) {
 			var neighbors = 0;
-			var width = this.props.width;
-			var height = this.props.height;
-			for (var k = row - 1; k < row + 2; k++) {
-				for (var l = col - 1; l < col + 2; l++) {
-					if (k >= 0 && k < height && l >= 0 && l < width) {
-						if (this.state.board[k][l] && (k != row || l != col)) {
-							neighbors++;
-						}
+			for (var k = -1; k < 2; k++) {
+				for (var l = -1; l < 2; l++) {
+					if (this.state.board[row + k][col + l] && (k != 0 || l != 0)) {
+						neighbors++;
 					}
 				}
 			}
