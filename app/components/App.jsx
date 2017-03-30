@@ -73,10 +73,10 @@ export default class App extends Component{
 	getNeighbors(row, col) {
 		let neighbors = 0;
 		for(let k = -1; k < 2; k++) {
-			for(let l = -1; l < 2; l++) {
-				if(this.state.board[row + k] && this.state.board[row + k][col + l] && (k != 0 || l != 0)) {
+			for(let l = -1; l < 2; l++) {	
+				if(row + k >= 0 && row + k < this.state.board.length && this.state.board[row + k][col + l] && (k != 0 || l != 0)) {
 					neighbors++;
-				}	
+				}		
 			}
 		}
 		return neighbors;

@@ -9556,7 +9556,7 @@ var App = function (_Component) {
 			var neighbors = 0;
 			for (var k = -1; k < 2; k++) {
 				for (var l = -1; l < 2; l++) {
-					if (this.state.board[row + k][col + l] && (k != 0 || l != 0)) {
+					if (this.state.board[row + k] != "undefined" && this.state.board[row + k][col + l] && (k != 0 || l != 0)) {
 						neighbors++;
 					}
 				}
