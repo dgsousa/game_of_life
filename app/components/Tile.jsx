@@ -2,7 +2,7 @@ import React, {PropTypes} from "react";
 
 
 
-const Tile = (props) =>{	
+const Tile = (props) => {	
 	return (
 		<div 
 			className="tile"

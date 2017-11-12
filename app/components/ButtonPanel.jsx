@@ -1,12 +1,12 @@
 import React, {PropTypes} from "react";
 
 
-const BottomPanel = (props) => {	
+const BottomPanel = ({onStart, onStop, onClear}) => {	
 	return (
 		<div className="bottompanel">
-			<button onClick={props.onStart}>Start</button>
-			<button onClick={props.onStop}>Stop</button>
-			<button onClick={props.onClear}>Clear</button>
+			<button onClick={onStart}>Start</button>
+			<button onClick={onStop}>Stop</button>
+			<button onClick={onClear}>Clear</button>
 		</div>
 	);	
 };
