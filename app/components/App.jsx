@@ -12,6 +12,10 @@ export default class App extends Component{
 			board: [],
 			counter: 0
 		};
+		this.addSquare = this.addSquare.bind(this);
+		this.start = this.start.bind(this);
+		this.stop = this.stop.bind(this);
+		this.clear = this.clear.bind(this);
 	}
 
 	componentWillMount() {
@@ -97,12 +101,12 @@ export default class App extends Component{
 					counter={this.state.counter}/>
 				<Board 	
 					board={this.state.board} 
-					add={this.addSquare.bind(this)}/>
+					add={this.addSquare}/>
 				
 				<ButtonPanel 
-					onStart={this.start.bind(this)}
-					onStop={this.stop.bind(this)}
-					onClear={this.clear.bind(this)}
+					onStart={this.start}
+					onStop={this.stop}
+					onClear={this.clear}
 					/>
 			</div>
 		);
