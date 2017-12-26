@@ -32,7 +32,11 @@ export default Board;
 
 React.propTypes = {
 	board: PropTypes.arrayOf(React.PropTypes.number.isRequired),
-	addSquare: PropTypes.func.isRequired
+	counter: PropTypes.number.isRequired,
+	addSquare: PropTypes.func.isRequired,
+	start: PropTypes.func.isRequired,
+	stop: PropTypes.func.isRequired,
+	clear: PropTypes.func.isRequired
 };
 
 

@@ -9803,7 +9803,11 @@ const Board = ({ board, counter, addSquare, start, stop, clear }) => __WEBPACK_I
 
 __WEBPACK_IMPORTED_MODULE_0_react___default.a.propTypes = {
 	board: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].arrayOf(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PropTypes.number.isRequired),
-	addSquare: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].func.isRequired
+	counter: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].number.isRequired,
+	addSquare: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].func.isRequired,
+	start: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].func.isRequired,
+	stop: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].func.isRequired,
+	clear: __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].func.isRequired
 };
 
 /***/ }),
