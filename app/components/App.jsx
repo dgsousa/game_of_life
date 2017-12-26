@@ -1,7 +1,5 @@
 import React, {Component, PropTypes} from "react";
-import TopPanel from "./TopPanel.jsx";
 import Board from "./Board.jsx";
-import ButtonPanel from "./ButtonPanel.jsx";
 
 
 
@@ -95,20 +93,16 @@ export default class App extends Component{
 
 
 	render() {
+		const props = { 
+			board: this.state.board, 
+			counter: this.state.counter, 
+			addSquare: this.addSquare, 
+			start: this.start, 
+			stop: this.stop, 
+			clear: this.clear 
+		};
 		return (
-			<div className="main">
-				<TopPanel 
-					counter={this.state.counter}/>
-				<Board 	
-					board={this.state.board} 
-					add={this.addSquare}/>
-				
-				<ButtonPanel 
-					onStart={this.start}
-					onStop={this.stop}
-					onClear={this.clear}
-					/>
-			</div>
+			<Board 	{...props}/>
 		);
 	}
 }
